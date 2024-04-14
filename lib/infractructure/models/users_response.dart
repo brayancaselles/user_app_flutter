@@ -1,4 +1,4 @@
-import 'package:user_app/domain/entities/users_entity.dart';
+import 'package:user_app/domain/entities/user_list_entity.dart';
 
 class UsersResponse {
   UsersResponse({
@@ -44,7 +44,7 @@ class UsersResponse {
         "username": username,
       };
 
-  UsersEntity toUsersEntity() => UsersEntity(
+  UserEntity toUsersEntity() => UserEntity(
         id: id,
         name: name,
         username: username,

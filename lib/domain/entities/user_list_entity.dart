@@ -1,5 +1,5 @@
-class UsersEntity {
-  UsersEntity({
+class UserEntity {
+  UserEntity({
     required this.website,
     required this.address,
     required this.phone,

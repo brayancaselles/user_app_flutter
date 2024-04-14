@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:user_app/domain/entities/users_entity.dart';
+import 'package:user_app/domain/entities/user_list_entity.dart';
 
-import '../../config/helpers/users_answer.dart';
+import '../../config/helpers/user_list_answer.dart';
 
 class UsersProvider extends ChangeNotifier {
-  final GetUsersAnswer usersAnswer = GetUsersAnswer();
-  List<UsersEntity> users = [];
+  final GetUserListAnswer usersAnswer = GetUserListAnswer();
+  List<UserEntity> users = [];
 
   Future<void> getUsers() async {
-    users = await usersAnswer.getAnswer();
+    users = await usersAnswer.getUserListAnswer();
     notifyListeners();
   }
 }

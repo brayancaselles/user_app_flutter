@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:user_app/config/theme/app_theme.dart';
 import 'package:user_app/presentation/providers/users_provider.dart';
-import 'package:user_app/presentation/widgets/users/user_list_item.dart';
+import 'package:user_app/presentation/widgets/users/user_item.dart';
 
 class UsersScreen extends StatefulWidget {
+  static const String name = 'users_screen';
   const UsersScreen({super.key});
 
   @override
