@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:user_app/config/theme/app_theme.dart';
+import 'package:user_app/presentation/providers/users_provider.dart';
 import 'package:user_app/presentation/widgets/users/user_list_item.dart';
 
 class UsersScreen extends StatefulWidget {
@@ -31,14 +33,19 @@ class _UsersScreenState extends State<UsersScreen> {
 class _UsersView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final usersProvider = context.watch<UsersProvider>();
+    usersProvider.getUsers();
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
         child: Column(
           children: [
-            Expanded(child: ListView.builder(
+            Expanded(
+                child: ListView.builder(
+              itemCount: usersProvider.users.length,
               itemBuilder: (context, index) {
-                return const UserListItem();
+                final user = usersProvider.users[index];
+                return UserItem(user: user);
               },
             ))
           ],
